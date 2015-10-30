@@ -209,6 +209,11 @@ String.prototype.rightChars = function(n){
       return $e;
     }
 
+    if ($e.data('typing')) {
+      console.log("Already typing, skipping.");
+      return;
+    }
+    
     $e.data('typing', true);
 
     while (currentText.charAt(i) === newString.charAt(i)) {
