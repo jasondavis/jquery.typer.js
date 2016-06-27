@@ -19,7 +19,8 @@ String.prototype.rightChars = function(n){
       typeDelay         : 200,
       clearOnHighlight  : true,
       typerDataAttr     : 'data-typer-targets',
-      typerInterval     : 2000
+      typerInterval     : 2000,
+      highlightColor    : null
     },
     highlight,
     clearText,
@@ -38,6 +39,10 @@ String.prototype.rightChars = function(n){
   spanWithColor = function(color, backgroundColor) {
     if (color === 'rgba(0, 0, 0, 0)') {
       color = 'rgb(255, 255, 255)';
+    }
+
+    if(options.highlightColor != null){
+      backgroundColor = options.highlightColor;
     }
 
     return $('<span></span>')
